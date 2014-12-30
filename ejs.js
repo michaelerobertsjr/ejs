@@ -50,7 +50,6 @@ require.relative = function (parent) {
 
 
 require.register("ejs.js", function(module, exports, require){
-
 /*!
  * EJS
  * Copyright(c) 2012 TJ Holowaychuk <tj@vision-media.ca>
@@ -209,12 +208,20 @@ var parse = exports.parse = function(str, options){
         consumeEOL = true;
       }
 
-      if (0 == js.trim().indexOf('include')) {
+       if (0 == js.trim().indexOf('include')) {
         var name = js.trim().slice(7).trim();
         if (!filename) throw new Error('filename option is required for includes');
-        var path = resolveInclude(name, filename);
-        include = read(path, 'utf8');
-        include = exports.parse(include, { filename: path, _with: false, open: open, close: close, compileDebug: compileDebug });
+
+		// If a variable exists in the scope (options object) whos key is the the value of name then
+		// search for a template that matches the value of that variable.
+		var templatePath;
+        if(options[name]) {
+             templatePath = resolveInclude(options[name], filename);
+		} else {
+             templatePath = resolveInclude(name, filename);
+		}
+        include = read(templatePath, 'utf8');
+        include = exports.parse(include, options); // Added transfer whole options
         buf += "' + (function(){" + include + "})() + '";
         js = '';
       }
