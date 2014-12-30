@@ -1,7 +1,7 @@
 {
   "name": "ejs-i",
   "description": "Embedded JavaScript templates with dynamic includes",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Michael E Roberts Jr. <michael.e.roberts.jr@gmail.com",
   "keywords": ["template", "engine", "ejs", "dynamic", "includes", "variable"],
   "devDependencies": {
