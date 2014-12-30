@@ -1,12 +1,10 @@
-# EJS
+# EJS-i
 
-Embedded JavaScript templates.
-
-[![Build Status](https://travis-ci.org/visionmedia/ejs.png)](https://travis-ci.org/visionmedia/ejs)
+Embedded JavaScript templates (with dynamic includes).
 
 ## Installation
 
-    $ npm install ejs
+    $ npm install ejs-i
 
 ## Features
 
@@ -57,7 +55,8 @@ Embedded JavaScript templates.
  for example if you have "./views/users.ejs" and "./views/user/show.ejs"
  you would use `<% include user/show %>`. The included file(s) are literally
  included into the template, _no_ IO is performed after compilation, thus
- local variables are available to these included templates.
+ local variables are available to these included templates. Includes can
+ also be variables that are passed to the ejs page from the render.
 
 ```
 <ul>
@@ -166,7 +165,8 @@ ejs.filters.last = function(obj) {
 
 (The MIT License)
 
-Copyright (c) 2009-2010 TJ Holowaychuk &lt;tj@vision-media.ca&gt;
+Copyright (c) 2009-2009 TJ Holowaychuk &lt;tj@vision-media.ca&gt;
+Copyright (c) 2015 Michael E Roberts Jr &lt;michael.e.roberts.jr@gmail.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
