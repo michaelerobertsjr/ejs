@@ -1,4 +1,4 @@
-# EJS-i
+# EJS-i [![npm version](https://badge.fury.io/js/ejs-i.svg)](http://badge.fury.io/js/ejs-i) [![build status](http://img.shields.io/travis/badges/shields.svg)](https://travis-ci.org/michaelerobertsjr/ejs-i)
 
 Embedded JavaScript templates with include variable.
 
