@@ -1,6 +1,6 @@
 # EJS-i
 
-Embedded JavaScript templates (with dynamic includes).
+Embedded JavaScript templates with include variable.
 
 ## Installation
 
@@ -17,7 +17,7 @@ as well as the standard ejs `include fileName` feature.
 First, you must pass the variable with the renderer for your variable to be 
 accessible on the page where you are calling the include function.
     
-    // eg. you can build strings to that contain filenames
+    // eg. you can build strings that contain a filename
     var page = 'dynamicPageName.ejs';
     
     // eg. you can use nested objects as well
